@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+    "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+    <constant name="struts.action.excludePattern" value="/webjars/.*,/h2-console/*" />
+
+    <package name="br.com.soc.sistema" extends="struts-default" strict-method-invocation="false">
+        
+        <action name="*Exames" class="br.com.soc.sistema.action.exame.ExameAction" method="{1}">
+            <result name="success">/exame/cadExame_b.jsp</result>
+            <result name="input">/exame/cadExame_i.jsp</result>
+            <result name="redirect" type="redirectAction">todosExames</result>
+        </action>
+
+        <action name="*Funcionarios" class="br.com.soc.sistema.action.funcionario.FuncionarioAction" method="{1}">
+            <result name="success">/funcionario/cadFuncionario_b.jsp</result>
+            <result name="input">/funcionario/cadFuncionario_i.jsp</result>
+            <result name="redirect" type="redirectAction">todosFuncionarios</result>
+        </action>
+
+        <action name="*ExameRealizados" class="br.com.soc.sistema.action.exameRealizado.ExameRealizadoAction" method="{1}">
+            <result name="success">/exameRealizado/cadExameRealizado_b.jsp</result>
+            <result name="input">/exameRealizado/cadExameRealizado_i.jsp</result>
+            <result name="redirect" type="redirectAction">todosExameRealizados</result>
+        </action>
+
+        <action name="todosExames" class="br.com.soc.sistema.action.exame.ExameAction" method="todosExames">
+            <result name="success">/exame/cadExame_b.jsp</result>
+        </action>
+
+        <action name="editarExame" class="br.com.soc.sistema.action.exame.ExameAction" method="editar">
+            <result name="success">/exame/editarExame.jsp</result>
+            <result name="input">/exame/editarExame.jsp</result>
+        </action>
+
+        <action name="todosFuncionarios" class="br.com.soc.sistema.action.funcionario.FuncionarioAction" method="todosFuncionarios">
+            <result name="success">/funcionario/cadFuncionario_b.jsp</result>
+        </action>
+
+        <action name="editarFuncionario" class="br.com.soc.sistema.action.funcionario.FuncionarioAction" method="editarFuncionario">
+            <result name="success">/funcionario/editarFuncionario.jsp</result>
+            <result name="input">/funcionario/editarFuncionario.jsp</result>
+        </action>
+
+        <action name="todosExameRealizados" class="br.com.soc.sistema.action.exameRealizado.ExameRealizadoAction" method="todosExameRealizados">
+            <result name="success">/exameRealizado/cadExameRealizado_b.jsp</result>
+            <result name="input">/exameRealizado/cadExameRealizado_i.jsp</result>
+        </action>
+
+        <action name="editarExameRealizado" class="br.com.soc.sistema.action.exameRealizado.ExameRealizadoAction" method="editar">
+            <result name="success">/exameRealizado/editarExameRealizado.jsp</result>
+            <result name="input">/exameRealizado/editarExameRealizado.jsp</result>
+        </action>
+        
+    </package>
+</struts>
