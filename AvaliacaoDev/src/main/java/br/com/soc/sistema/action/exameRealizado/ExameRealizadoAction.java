@@ -41,6 +41,9 @@ public class ExameRealizadoAction extends Action {
 	private ExameRealizadoVo exameRealizadoVo = new ExameRealizadoVo();
 	private ExameRealizadoDao exameRealizadoDao = new ExameRealizadoDao();
 	
+	private String codigoExame;
+	private String codigoFuncionario;
+	
 	public String todosExameRealizados() {
 		funcionarios = funcionarioBusiness.trazerTodosOsFuncionarios();	
 		exames = exameBusiness.trazerTodosOsExames();
@@ -114,14 +117,14 @@ public class ExameRealizadoAction extends Action {
 	}
 
 
-    private void salvarExameRealizado(ExameRealizadoVo exameRealizadoVo) {
-        try {
-            exameRealizadoDao.insertExameRealizado(exameRealizadoVo);
-            System.out.println("Exame realizado salvo com sucesso!");
-        } catch (Exception e) {
-            System.err.println("Erro ao salvar o exame realizado: " + e.getMessage());
-        }
-    }
+//    private void salvarExameRealizado(ExameRealizadoVo exameRealizadoVo) {
+//        try {
+//            exameRealizadoDao.insertExameRealizado(exameRealizadoVo);
+//            System.out.println("Exame realizado salvo com sucesso!");
+//        } catch (Exception e) {
+//            System.err.println("Erro ao salvar o exame realizado: " + e.getMessage());
+//        }
+//    }
 	
 	
 	
@@ -198,6 +201,22 @@ public class ExameRealizadoAction extends Action {
 
 	public void setExameRealizadoVo(ExameRealizadoVo exameRealizadoVo) {
 		this.exameRealizadoVo = exameRealizadoVo;
+	}
+
+	public String getCodigoExame() {
+		return codigoExame;
+	}
+
+	public void setCodigoExame(String codigoExame) {
+		this.codigoExame = codigoExame;
+	}
+
+	public String getCodigoFuncionario() {
+		return codigoFuncionario;
+	}
+
+	public void setCodigoFuncionario(String codigoFuncionario) {
+		this.codigoFuncionario = codigoFuncionario;
 	}
 }
 
