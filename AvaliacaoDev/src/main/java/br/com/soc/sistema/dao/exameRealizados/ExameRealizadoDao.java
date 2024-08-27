@@ -157,15 +157,14 @@ public class ExameRealizadoDao extends Dao {
 	//**********EDIÇÃO DE EXAMES REALIZADOS **********
 
 	public void updateExameRealizado(ExameRealizadoVo exameRealizadoVo) {
-	    String query = "UPDATE exameRealizado SET dt_resultado = ?, codigo_exame = ?, Nm_exame = ?, cod_funcionario = ?, nm_funcionario = ? WHERE rowid = ?";
+	    String query = "UPDATE exameRealizado SET dt_resultado = ?, cod_exame = ?, cod_funcionario = ? WHERE rowid = ?";
+	    int i = 1;
 	    try (Connection con = getConexao();
 	         PreparedStatement ps = con.prepareStatement(query)) {
-	    	 ps.setString(1, exameRealizadoVo.getNome());
-		     ps.setString(2, exameRealizadoVo.getCodigoExame());
-		     ps.setString(3, exameRealizadoVo.getNomeExame());
-		     ps.setString(4, exameRealizadoVo.getCodFuncionario());
-		     ps.setString(5, exameRealizadoVo.getNomeFuncionario());
-		     ps.setLong(6, Long.parseLong(exameRealizadoVo.getRowid()));
+	    	 ps.setString(i++, exameRealizadoVo.getDataResultado());
+		     ps.setString(i++, exameRealizadoVo.getCodigoExame());
+		     ps.setString(i++, exameRealizadoVo.getCodFuncionario());
+		     ps.setLong(i++, Long.parseLong(exameRealizadoVo.getRowid()));
 		     ps.executeUpdate();
 	    } catch (SQLException e) {
 	        e.printStackTrace();

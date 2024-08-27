@@ -7,6 +7,7 @@ public class ExameRealizadoVo {
     private String nomeExame; 
     private String codFuncionario;  
     private String nomeFuncionario; 
+    private String dataResultado;
 	
 	public ExameRealizadoVo() {}
 		
@@ -62,5 +63,13 @@ public class ExameRealizadoVo {
     public void setNomeExame(String nomeExame) {
         this.nomeExame = nomeExame;
     }
+
+	public String getDataResultado() {
+		return dataResultado;
+	}
+
+	public void setDataResultado(String dataResultado) {
+		this.dataResultado = dataResultado;
+	}
 	
 }

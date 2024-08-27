@@ -33,6 +33,12 @@
 									</s:if>
 									<s:else>
 										Novo Exame Realizado
+										<s:url action="salvarExameRealizados" var="salvar">
+										</s:url>
+	
+										<a href="${salvar}" class="btn btn-warning text-white">
+											<s:text name="label.editar"/>
+										</a>
 									</s:else>
 								</h5>
 							</div>
