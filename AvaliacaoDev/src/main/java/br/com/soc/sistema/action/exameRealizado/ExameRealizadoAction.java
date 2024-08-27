@@ -150,6 +150,7 @@ public class ExameRealizadoAction extends Action {
 	//**********EDIÇÃO DE EXAMES REALIZADOS**********
 	
 	public String editar() {
+		funcionarios = funcionarioBusiness.trazerTodosOsFuncionarios();	
 		if(exameRealizadoVo.getRowid() == null)
 			return REDIRECT;
 		
